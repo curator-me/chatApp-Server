@@ -4,13 +4,13 @@ const {
   getUsersCollection,
 } = require("./db");
 
-console.log("Socket.IO server running on port 8000");
+const PORT = process.env.PORT || 8000;
 
 connectDB().then(() => {
   console.log("Database ready, starting Socket.IO...");
 
   const { instrument } = require("@socket.io/admin-ui");
-  const io = require("socket.io")(8000, {
+  const io = require("socket.io")(PORT, {
     cors: {
       origin: [
         "http://127.0.0.1:5500",
@@ -20,6 +20,8 @@ connectDB().then(() => {
       credentials: true,
     },
   });
+
+  console.log(`Socket.IO server running on port ${PORT}`);
 
   const users = {};
 
