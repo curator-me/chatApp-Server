@@ -1,5 +1,4 @@
 const { MongoClient } = require("mongodb");
-// const uri = "mongodb+srv://nomas:Ckvn3WqrsVG6Ahcm@youtube.iakosuk.mongodb.net/chatApp?retryWrites=true&w=majority";
 
 const uri = process.env.MONGODB_URI; // from Render env vars
 
