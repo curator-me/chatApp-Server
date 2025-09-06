@@ -1,6 +1,7 @@
 const { MongoClient } = require("mongodb");
-const uri =
-  "mongodb+srv://nomas:Ckvn3WqrsVG6Ahcm@youtube.iakosuk.mongodb.net/chatApp?retryWrites=true&w=majority";
+// const uri = "mongodb+srv://nomas:Ckvn3WqrsVG6Ahcm@youtube.iakosuk.mongodb.net/chatApp?retryWrites=true&w=majority";
+
+const uri = process.env.MONGODB_URI; // from Render env vars
 
 const client = new MongoClient(uri);
 
@@ -27,9 +28,5 @@ function getUsersCollection() {
     return db.collection("users")
 }
 
-function getRoomCollection() {
-  if(!db) throw new Error("Database not initialized yet")
-    return db.collection("rooms")
-}
 
-module.exports = { connectDB, getMessagesCollection, getUsersCollection, getRoomCollection };
+module.exports = { connectDB, getMessagesCollection, getUsersCollection };

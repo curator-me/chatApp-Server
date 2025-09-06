@@ -2,7 +2,6 @@ const {
   connectDB,
   getMessagesCollection,
   getUsersCollection,
-  getRoomCollection,
 } = require("./db");
 
 console.log("Socket.IO server running on port 8000");
