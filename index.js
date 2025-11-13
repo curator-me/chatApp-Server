@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8000;
 async function initSocketServer() {
   try {
     await connectDB();
-    console.log("✅ Database connected. Starting Socket.IO...");
+    console.log("Database connected. Starting Socket.IO...");
 
     const io = new Server(PORT, {
       cors: {
@@ -21,14 +21,14 @@ async function initSocketServer() {
       },
     });
 
-    console.log(`🚀 Socket.IO server running on port ${PORT}`);
+    console.log(`Socket.IO server running on port ${PORT}`);
 
     setupSocketAuth(io);
     setupSocketEvents(io);
 
     instrument(io, { auth: false, mode: "development" });
   } catch (err) {
-    console.error("❌ Failed to start Socket.IO server:", err);
+    console.error("Failed to start Socket.IO server:", err);
   }
 }
 
@@ -64,7 +64,7 @@ function setupSocketAuth(io) {
 // Event Handlers
 function setupSocketEvents(io) {
   io.on("connection", async (socket) => {
-    console.log(`✅ User connected: ${socket.user.username}`);
+    console.log(`User connected: ${socket.user.username}`);
 
     const usersCollection = getUsersCollection();
     const messagesCollection = getMessagesCollection();
