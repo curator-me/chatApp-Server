@@ -1,0 +1,28 @@
+{
+  "name": "chatapp-server",
+  "version": "1.0.0",
+  "description": "chatApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "[\"chat\"",
+    "\"chat-app\"",
+    "\"nodejs\"",
+    "\"socketio\"",
+    "\"real-time\"]"
+  ],
+  "author": "nomas",
+  "license": "ISC",
+  "dependencies": {
+    "@socket.io/admin-ui": "^0.5.1",
+    "mongoose": "^8.18.0",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
