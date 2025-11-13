@@ -30,18 +30,18 @@ It’s designed to connect seamlessly with a frontend client (like a web chat UI
 
 ## Setup Instructions
 
-Clone the repository
+### Clone the repository
 ```bash
 git clone https://github.com/your-username/chat-backend.git
 cd chat-backend
 ```
 
-Install dependencies
+### Install dependencies
 ```
 npm install
 ```
 
-Add environment variables
+### Add environment variables
 Create a .env file (or use Render environment variables):
 
 ```
@@ -49,7 +49,7 @@ MONGODB_URI=your_mongodb_connection_string
 PORT=8000
 ```
 
-Start the server
+### Start the server
 ```
 node index.js
 ```
